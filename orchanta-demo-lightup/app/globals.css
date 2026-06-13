@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* Lightup Network Solutions brand (lightupnet.de): Tiefblau #00529C + Dunkelorange #ff8c00,
+   white dividers, steel grey #8A95A9 nav accents, Arial/Helvetica (mirrored with Arimo). */
+@theme {
+  --color-blau: #00529c;
+  --color-blau-deep: #003c73;
+  --color-blau-soft: #eaf2f9;
+  --color-orange: #ff8c00;
+  --color-orange-deep: #d97700;
+  --color-orange-soft: #fff3e3;
+  --color-steel: #8a95a9;
+  --color-paper: #ffffff;
+  --color-mist: #f5f7fa;
+  --color-line: #dde3ea;
+  --color-ink: #16222e;
+  --color-mute: #5a6675;
+  --color-ok: #1d8a4e;
+  --color-ok-soft: #e8f6ee;
+  --font-body: var(--font-arimo), Arial, Helvetica, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+html, body {
+  background: var(--color-mist);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+
+.font-mono { font-family: var(--font-mono); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.fade-up { animation: fadeUp .3s ease both; }
+@media (prefers-reduced-motion: reduce) { .fade-up { animation: none; } }

@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* IDM Imagineering brand (idmimagineering.co.uk, WooCommerce/Storefront):
+   accent magenta #ba23b8 on lead words of all-caps headings, ink #333333,
+   mute #6d6d6d, light workshop greys, Source Sans Pro (→ Source Sans 3). */
+@theme {
+  --color-ink: #333333;
+  --color-ink-deep: #1a1a1a;
+  --color-mute: #6d6d6d;
+  --color-paper: #ffffff;
+  --color-panel: #f8f8f8;
+  --color-panel-2: #f0f0f0;
+  --color-line: #d5d5d5;
+  --color-line-soft: #eeeeee;
+  --color-magenta: #ba23b8;
+  --color-magenta-deep: #93158f;
+  --color-magenta-soft: #fbeafa;
+  --color-woo: #7f54b3;
+  --font-body: var(--font-source), "Source Sans Pro", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+
+/* IDM heading style: heavy caps, lead word in magenta. */
+.idm-h {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.scroll-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: var(--color-line); border-radius: 8px; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.fade-up { animation: fadeUp .3s ease both; }
+@media (prefers-reduced-motion: reduce) { .fade-up { animation: none; } }

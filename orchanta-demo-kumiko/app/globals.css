@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/*
+ * Kumiko Lash brand — extracted from kumikolash.com theme CSS (13 Jun 2026):
+ * cream #FFFAF7 (background) · rust #761E0B (foreground/ink) · maroon #531003
+ * lilac #E2C8F3 (heading accent) · flame #FF4315 (hover) · pink #FFA1FE
+ * iris #6453A7 · violet #552176 — body font: Liter (her live theme font).
+ */
+@theme {
+  --color-cream: #fffaf7;
+  --color-rust: #761e0b;
+  --color-maroon: #531003;
+  --color-lilac: #e2c8f3;
+  --color-flame: #ff4315;
+  --color-pink: #ffa1fe;
+  --color-iris: #6453a7;
+  --color-violet: #552176;
+  --color-blush: #fdeee6;
+  --color-line: #efdcd2;
+  --font-display: var(--font-instrument), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-liter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  background: var(--color-cream);
+  color: var(--color-rust);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  box-sizing: border-box;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Soft brand-gradient fields used in place of photography */
+.hero-field {
+  background:
+    radial-gradient(52rem 30rem at 85% -10%, rgba(226, 200, 243, 0.55), transparent 65%),
+    radial-gradient(40rem 26rem at -10% 30%, rgba(255, 161, 254, 0.22), transparent 60%),
+    radial-gradient(34rem 22rem at 55% 110%, rgba(255, 67, 21, 0.08), transparent 60%),
+    var(--color-cream);
+}
+.card-field-fairy {
+  background:
+    radial-gradient(120% 90% at 50% 110%, rgba(226, 200, 243, 0.65), transparent 70%),
+    linear-gradient(165deg, #fff5ef 0%, #fdeee6 100%);
+}
+.card-field-princess {
+  background:
+    radial-gradient(120% 90% at 50% 110%, rgba(255, 161, 254, 0.35), transparent 70%),
+    linear-gradient(165deg, #fff3f9 0%, #f9e4f3 100%);
+}
+.card-field-starlight {
+  background:
+    radial-gradient(120% 90% at 50% 110%, rgba(100, 83, 167, 0.3), transparent 70%),
+    linear-gradient(165deg, #f4effc 0%, #e9def5 100%);
+}
+.card-field-rawedge {
+  background:
+    radial-gradient(120% 90% at 50% 110%, rgba(118, 30, 11, 0.12), transparent 70%),
+    linear-gradient(165deg, #f8efe9 0%, #efe0d6 100%);
+}
+.card-field-bundle {
+  background:
+    radial-gradient(60rem 20rem at 100% 0%, rgba(255, 161, 254, 0.25), transparent 60%),
+    radial-gradient(40rem 18rem at 0% 100%, rgba(226, 200, 243, 0.5), transparent 60%),
+    var(--color-maroon);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-up {
+  animation: fadeUp 0.3s ease both;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+.slide-in {
+  animation: slideIn 0.25s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .slide-in {
+    animation: none;
+  }
+}

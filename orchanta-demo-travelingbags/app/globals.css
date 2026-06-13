@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/*
+ * Traveling Bags brand (travelingbagsmke.com):
+ *  - Wordmark: "TRAVELING" dark red #790b0a, "BAGS" + suitcases navy #242263
+ *  - Theme scheme 1: action blue #0d45ff (hover #406dff), deep-blue headings
+ *    #093b82, light-blue panels #9fcfed
+ *  - Header: white bg, near-black #070707 text; footer panel #f4f4f4
+ *  - Typeface: DM Sans throughout (the store's theme font)
+ */
+@theme {
+  --color-brand-red: #790b0a;
+  --color-brand-navy: #242263;
+  --color-action: #0d45ff;
+  --color-action-hover: #406dff;
+  --color-deep: #093b82;
+  --color-sky: #9fcfed;
+  --color-sky-soft: #eaf4fb;
+  --color-ink: #070707;
+  --color-mute: #6c757d;
+  --color-paper: #ffffff;
+  --color-panel: #f4f4f4;
+  --color-line: #e6e6e6;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Keep figures aligned in tables and stat rows. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* Strahltechnik Express brand — extracted from strahltechnik-express.de compiled stylesheet:
+   signal orange #f57607 (hover #c35e06), dark slate #393e46 / #22252a, body grays #333/#777,
+   lines #ddd/#eee, PT Sans Narrow display type. Industrial, technical, no-nonsense. */
+@theme {
+  --color-orange: #f57607;
+  --color-orange-deep: #c35e06;
+  --color-orange-soft: #fdeede;
+  --color-slate: #393e46;
+  --color-slate-deep: #22252a;
+  --color-ink: #333333;
+  --color-mute: #777777;
+  --color-soft: #9aa0a8;
+  --color-line: #dddddd;
+  --color-line-dark: #4a505a;
+  --color-paper: #ffffff;
+  --color-haze: #f5f5f5;
+  --color-ok: #3c763d;
+  --color-ok-soft: #eaf4ea;
+  --color-bad: #a94442;
+  --color-bad-soft: #f9eceb;
+  --font-display: var(--font-pt-narrow), "Arial Narrow", Helvetica, Arial, sans-serif;
+  --font-body: var(--font-pt-sans), Helvetica, Arial, ui-sans-serif, sans-serif;
+}
+
+html,
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  box-sizing: border-box;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-up {
+  animation: fadeUp 0.25s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}

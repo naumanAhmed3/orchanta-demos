@@ -1,0 +1,6 @@
+{
+  "name": "orchanta-unsubscribe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Orchanta one-click unsubscribe endpoint (RFC 8058). Records opt-outs to the shared sheet's Unsubscribes tab via the Apps Script web app. No dependencies — uses the Vercel Node runtime's global fetch."
+}

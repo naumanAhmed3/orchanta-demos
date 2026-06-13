@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* Tita Italia brand, lifted from titaitalia.com:
+   gold #dfb94e (announcement bar + crest logo), Italian green #009246
+   (primary buttons, darker #005f2e), sale red #da2f0c, black-on-white body,
+   #e4e4e4 borders. Site body font is Nunito; the crest wordmark is Roman
+   serif caps, approximated with Cinzel. */
+@theme {
+  --color-ink: #1a1a1a;
+  --color-paper: #ffffff;
+  --color-cream: #faf7ef;
+  --color-line: #e4e4e4;
+  --color-mute: #6b6b6b;
+  --color-gold: #dfb94e;
+  --color-gold-deep: #a8842a;
+  --color-gold-soft: #faf3dd;
+  --color-green: #009246;
+  --color-green-deep: #005f2e;
+  --color-green-soft: #e8f5ee;
+  --color-red: #da2f0c;
+  --color-red-soft: #fdeeea;
+  --font-display: var(--font-cinzel), "Times New Roman", Georgia, serif;
+  --font-body: var(--font-nunito), ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  box-sizing: border-box;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #d8d2c2;
+  border-radius: 8px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-up {
+  animation: fadeUp 0.25s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}

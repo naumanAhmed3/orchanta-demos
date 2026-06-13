@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* HiPrimal brand — mirrored from hiprimal.vercel.app design tokens:
+   warm bone neutrals, a single oxblood accent, Fraunces serif display with
+   italic oxblood accents, Inter body, sharp (zero-radius) corners. */
+@theme {
+  --color-bone: #f4eee1;
+  --color-bone-deep: #ece4d2;
+  --color-paper: #fbf7ed;
+  --color-ink: #221c17;
+  --color-ink-soft: #5c544b;
+  --color-ink-faint: #8a8175;
+  --color-oxblood: #5e1b21;
+  --color-oxblood-deep: #451115;
+  --color-oxblood-tint: #e9dcd4;
+  --color-rose: #c99a8e;
+  --color-line: rgb(34 28 23 / 0.18);
+  --color-line-soft: rgb(34 28 23 / 0.09);
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+html,
+body {
+  background: var(--color-bone);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Uppercase tracked kicker, as on the brand's own site. */
+.kicker {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-oxblood);
+}
+
+/* FAQ accordion (native <details>) */
+details.faq summary {
+  list-style: none;
+  cursor: pointer;
+}
+details.faq summary::-webkit-details-marker {
+  display: none;
+}
+details.faq .chev {
+  transition: transform 0.2s ease;
+}
+details.faq[open] .chev {
+  transform: rotate(45deg);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-up {
+  animation: fadeUp 0.3s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}

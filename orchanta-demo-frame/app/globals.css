@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Frame brand: bright white, big condensed black display, red + lime/pink pops. */
+@theme {
+  --color-ink: #0a0a0a;
+  --color-paper: #ffffff;
+  --color-panel: #f5f5f5;
+  --color-line: #e6e6e6;
+  --color-mute: #6b6b6b;
+  --color-red: #e60f20;
+  --color-lime: #c8f746;
+  --color-coral: #ff6950;
+  --color-pink: #ff88be;
+  --font-display: var(--font-anton), "Arial Narrow", sans-serif;
+  --font-body: var(--font-hanken), ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+
+.display { font-family: var(--font-display); text-transform: uppercase; line-height: 0.9; letter-spacing: 0.01em; }
+.skew { display: inline-block; transform: skewX(-9deg); }
+
+.scroll-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #dcdcdc; border-radius: 8px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.fade-up { animation: fadeUp .3s ease both; }
+@keyframes sheetIn { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.sheet-in { animation: sheetIn .32s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes overlayIn { from { opacity: 0; } to { opacity: 1; } }
+.overlay-in { animation: overlayIn .2s ease both; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .sheet-in, .overlay-in { animation: none; } }

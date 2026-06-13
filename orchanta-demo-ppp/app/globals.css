@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* ProPropertyProjects brand: black + teal #4FBFB7 + warm gold #E6C897, Cormorant serif display. */
+@theme {
+  --color-ink: #101317;
+  --color-ink-2: #1a1f24;
+  --color-paper: #ffffff;
+  --color-cream: #faf8f3;
+  --color-line: #e7e2d8;
+  --color-line-dark: #2a3037;
+  --color-mute: #5f6468;
+  --color-soft: #8f8f8f;
+  --color-teal: #4fbfb7;
+  --color-teal-deep: #2f9f97;
+  --color-teal-soft: #e7f6f4;
+  --color-gold: #e6c897;
+  --color-gold-deep: #c9a86a;
+  --font-display: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+
+.font-display { font-family: var(--font-display); }
+.scroll-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #cfd6d8; border-radius: 8px; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.fade-up { animation: fadeUp .3s ease both; }
+@media (prefers-reduced-motion: reduce) { .fade-up { animation: none; } }

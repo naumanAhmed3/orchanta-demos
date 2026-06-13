@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Salas Training brand, lifted from salastraining.com indexpage.css :root —
+   night black #0e0e0e, surfaces #161616/#1c1c1c, warm cream #f6f0e7,
+   crimson #8D0D14 (+ red glow), gold highlight #dfb755, pill buttons, 20px cards.
+   Heads: Monument Extended -> Lexend Exa. Body: Suisse Intl -> Inter. */
+@theme {
+  --color-night: #0e0e0e;
+  --color-surface: #161616;
+  --color-surface-2: #1c1c1c;
+  --color-cream: #f6f0e7;
+  --color-cream-60: rgba(246, 240, 231, 0.6);
+  --color-cream-40: rgba(246, 240, 231, 0.4);
+  --color-line: rgba(246, 240, 231, 0.14);
+  --color-line-soft: rgba(246, 240, 231, 0.08);
+  --color-crimson: #8d0d14;
+  --color-crimson-bright: #b01820;
+  --color-gold: #dfb755;
+  --font-display: var(--font-lexend-exa), "Arial Black", system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --radius-card: 20px;
+}
+
+html,
+body {
+  background: var(--color-night);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  box-sizing: border-box;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.glow-crimson {
+  box-shadow: 0 0 42px rgba(179, 0, 0, 0.35);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-up {
+  animation: fadeUp 0.25s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}

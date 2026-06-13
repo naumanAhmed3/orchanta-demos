@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/*
+ * Farm Link Hawaiʻi brand (pulled from farmlinkhawaii.com's live Shopify theme):
+ *   greens  #468f48 (sections) / #4a986d (soft scheme), cream #f8f3e2 (accent-1),
+ *   CTA yellow #f5c518, coral #f14e51, slate #242833, ink #121212.
+ *   Headings + body: DM Sans.
+ */
+@theme {
+  --color-ink: #121212;
+  --color-slate: #242833;
+  --color-slate-2: #2f3442;
+  --color-paper: #ffffff;
+  --color-cream: #f8f3e2;
+  --color-cream-deep: #efe6c9;
+  --color-line: #e6dfc9;
+  --color-mute: #5d6156;
+  --color-soft: #8a8f85;
+  --color-green: #468f48;
+  --color-green-deep: #1c391d;
+  --color-green-soft: #4a986d;
+  --color-green-tint: #e9f2e9;
+  --color-sun: #f5c518;
+  --color-sun-deep: #d9a900;
+  --color-coral: #f14e51;
+  --color-coral-tint: #fdeaea;
+  --font-body: var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+* {
+  box-sizing: border-box;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fade-up {
+  animation: fadeUp 0.3s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}

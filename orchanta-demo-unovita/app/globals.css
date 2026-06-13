@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Uno Vita brand: signature orange #F2842D (wordmark, scheme-1 bg, review stars),
+   near-black ink #090302 (scheme buttons), warm charcoal headings #443C3B,
+   Nunito Sans headings / Open Sans body — clean Scandinavian health-tech feel.
+   Teal #108474 (their configured widget accent) is used as the "correct/success" color. */
+@theme {
+  --color-ink: #090302;
+  --color-ink-2: #443c3b;
+  --color-paper: #ffffff;
+  --color-shell: #faf7f4;
+  --color-line: #ece5dd;
+  --color-mute: #7b7370;
+  --color-soft: #a39b97;
+  --color-uno: #f2842d;
+  --color-uno-deep: #d96f1a;
+  --color-uno-soft: #fdf1e6;
+  --color-vita: #108474;
+  --color-vita-soft: #e6f4f1;
+  --color-alert: #c2402f;
+  --color-alert-soft: #fbeae7;
+  --font-display: var(--font-nunito-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-open-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+  background: var(--color-shell);
+  color: var(--color-ink-2);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+
+.font-display { font-family: var(--font-display); }
+
+.tnum { font-variant-numeric: tabular-nums; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.fade-up { animation: fadeUp .3s ease both; }
+@media (prefers-reduced-motion: reduce) { .fade-up { animation: none; } }

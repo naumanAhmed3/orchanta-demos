@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#22252a"/>
+  <!-- Blast-nozzle mark: nozzle body + abrasive spray dots in signal orange -->
+  <path d="M10 26 h18 l6 4 v4 l-6 4 H10 z" fill="#f57607"/>
+  <circle cx="42" cy="26" r="2.6" fill="#f57607"/>
+  <circle cx="48" cy="32" r="2.6" fill="#f57607"/>
+  <circle cx="42" cy="38" r="2.6" fill="#f57607"/>
+  <circle cx="52" cy="22" r="1.8" fill="#fdeede"/>
+  <circle cx="55" cy="32" r="1.8" fill="#fdeede"/>
+  <circle cx="52" cy="42" r="1.8" fill="#fdeede"/>
+</svg>

@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* Uptail brand: light + purple #7f00ff, yellow accent, Plus Jakarta / Inter / Fragment Mono. */
+@theme {
+  --color-bg: #faf9fb;
+  --color-surface: #f5f0fa;
+  --color-surface-2: #f4ebff;
+  --color-card: #ffffff;
+  --color-line: #e6d9f2;
+  --color-line-2: #ece7f2;
+  --color-ink: #141018;
+  --color-ink-2: #12091b;
+  --color-mute: #80758a;
+  --color-faint: #b3afb6;
+  --color-purple: #7f00ff;
+  --color-purple-deep: #6a00ff;
+  --color-purple-mid: #9950e2;
+  --color-yellow: #ffd000;
+  --color-ok: #22b07a;
+  --color-wa: #25d366;
+  --color-wa-bubble: #e8ffe0;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-fragment), ui-monospace, "SF Mono", monospace;
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+
+.font-display { font-family: var(--font-display); }
+.font-mono { font-family: var(--font-mono); }
+
+.glow {
+  background:
+    radial-gradient(50% 42% at 28% 0%, rgba(127, 0, 255, 0.16), transparent 70%),
+    radial-gradient(42% 38% at 90% 8%, rgba(255, 208, 0, 0.18), transparent 70%);
+}
+
+.scroll-thin::-webkit-scrollbar { width: 7px; height: 7px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #d9cfe8; border-radius: 8px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: none; } }
+.fade-up { animation: fadeUp .26s ease both; }
+@keyframes pop { from { opacity: 0; transform: scale(.95); } to { opacity: 1; transform: scale(1); } }
+.pop { animation: pop .24s ease both; }
+@keyframes blink { 0%, 60%, 100% { opacity: .25; } 30% { opacity: 1; } }
+.dot { animation: blink 1.2s infinite; }
+.dot:nth-child(2) { animation-delay: .2s; }
+.dot:nth-child(3) { animation-delay: .4s; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+.pulse { animation: pulse 1.3s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .pop, .dot, .pulse { animation: none; } }

@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Record OS brand: light off-white canvas, IBM Plex Sans, deep-teal accent, navy ink. */
+@theme {
+  --color-canvas: #f8fafa;
+  --color-card: #ffffff;
+  --color-ink: #1f2222;
+  --color-ink-2: #14181f;
+  --color-mute: #6b7172;
+  --color-faint: #9aa1a1;
+  --color-line: #e4e9e9;
+  --color-line-2: #eef2f2;
+  --color-teal: #006f6a;
+  --color-teal-2: #00857f;
+  --color-teal-soft: #e4f0ef;
+  --color-amber: #b45309;
+  --color-amber-soft: #fdf4e7;
+  --color-green: #047857;
+  --color-green-soft: #e7f3ee;
+  --font-sans: var(--font-ibm-plex), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+html, body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+
+.scroll-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #d3dada; border-radius: 8px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.fade-up { animation: fadeUp .28s ease both; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
+.pulse { animation: pulse 1.3s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .pulse { animation: none; } }

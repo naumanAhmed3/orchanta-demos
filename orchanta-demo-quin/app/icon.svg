@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="8" fill="#0b2a44"/>
+  <!-- blueprint corner registration marks -->
+  <path d="M10 16 V10 H16 M48 10 H54 V16 M54 48 V54 H48 M16 54 H10 V48" fill="none" stroke="#cbd5e1" stroke-width="1.5" opacity="0.7"/>
+  <text x="32" y="43" text-anchor="middle" font-family="Trajan Pro, Optima, Georgia, serif" font-size="30" font-weight="700" letter-spacing="2" fill="#ffffff">Q</text>
+</svg>
