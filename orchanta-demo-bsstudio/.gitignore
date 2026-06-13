@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.vercel/
+.env
+.env.*
+*.log
+.DS_Store
+__pycache__/
+.vercel

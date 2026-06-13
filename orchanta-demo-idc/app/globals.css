@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette.
+     Navy is evidenced from the school's live student portal (#001f3f).
+     Safety yellow + green are a road-safety convention we added,
+     since the portal exposed no accent colour. */
+  --color-navy: #001f3f;
+  --color-navy-800: #0a2a4a;
+  --color-navy-700: #143a5e;
+  --color-accent: #f5b800;
+  --color-accent-soft: #fff4d1;
+  --color-success: #15803d;
+  --color-success-soft: #e7f6ec;
+  --color-ink: #0f1b2d;
+  --color-cloud: #f4f7fb;
+
+  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cloud);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle road-marking texture used behind the hero. */
+.hero-grid {
+  background-image:
+    radial-gradient(circle at 20% 15%, rgba(245, 184, 0, 0.16), transparent 45%),
+    radial-gradient(circle at 85% 0%, rgba(20, 58, 94, 0.55), transparent 55%);
+}

@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  /* Defaulted clean dental identity: calm teal + white + warm sand accent.
+     (Facebook page exposes no brand palette, so this is a sensible default.) */
+  --color-brand: #0d7d8c;
+  --color-brand-dark: #0a5b66;
+  --color-brand-soft: #e6f3f4;
+  --color-brand-tint: #f2fafb;
+  --color-accent: #e08a3c;
+  --color-accent-soft: #fbeede;
+  --color-ink: #0e2b30;
+  --color-muted: #557076;
+  --color-line: #d8e8ea;
+  --color-canvas: #f5fafb;
+  --color-surface: #ffffff;
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}

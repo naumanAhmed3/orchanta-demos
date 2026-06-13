@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* Brand tokens — DEFAULTED. The salon's Facebook (/smhsalon) and Instagram
+   (@setmyhair_salon / @setmyhairwomen) are login-walled, so no palette could
+   be extracted. We use a chic modern salon identity: soft blush + dusty rose,
+   a deep wine ink, and a refined gold accent, with an elegant serif wordmark
+   (Cormorant Garamond) over a clean geometric body face (Jost). */
+@theme {
+  --color-rose: #b76e84;
+  --color-rose-600: #9e5870;
+  --color-rose-700: #84495c;
+  --color-plum: #5e2a3b;
+  --color-gold: #c0973f;
+  --color-gold-soft: #e7d6a8;
+  --color-ink: #2a1820;
+  --color-ink-soft: #6e5760;
+  --color-blush: #fbf3f4;
+  --color-blush-deep: #f4e6e9;
+  --color-paper: #ffffff;
+  --color-line: #efdfe3;
+
+  --font-heading: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-blush);
+  color: var(--color-ink-soft);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-ink);
+  letter-spacing: -0.005em;
+  line-height: 1.1;
+}
+
+/* ---- CSS-rendered service / gallery tiles (no images) ---- */
+.tile {
+  position: relative;
+  overflow: hidden;
+}
+.tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1.4px);
+  background-size: 9px 9px;
+  mix-blend-mode: soft-light;
+}
+
+.tile-cut { background: linear-gradient(135deg, #c98ba0, #8a4f64); }
+.tile-blowdry { background: linear-gradient(135deg, #e5b9c4, #b76e84); }
+.tile-color { background: linear-gradient(135deg, #b07a90, #5e2a3b); }
+.tile-highlights { background: linear-gradient(135deg, #e7d6a8, #c0973f); }
+.tile-keratin { background: linear-gradient(135deg, #d8c4cb, #8a6f7a); }
+.tile-treatment { background: linear-gradient(135deg, #cfd8c9, #7e9a82); }
+.tile-facial { background: linear-gradient(135deg, #f0dcd5, #d2a18f); }
+.tile-bridal { background: linear-gradient(135deg, #efe0c2, #b76e84); }
+
+/* Muted "before" tiles for the gallery */
+.tile-before-dull { background: linear-gradient(135deg, #cbb9bd, #8f7c82); }
+.tile-before-flat { background: linear-gradient(135deg, #c7bdba, #8c7f7a); }
+.tile-before-frizz { background: linear-gradient(135deg, #cfc6c2, #948983); }
+.tile-before-bare { background: linear-gradient(135deg, #d7cfca, #9c918a); }

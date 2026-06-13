@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* Brand tokens extracted from armtextile.com (Astra theme):
+   links #2380d6, buttons #2cbcf1 / hover #1897c5, accent #ff5e14,
+   body text #5a5a5a, headings Barlow, body Open Sans. */
+@theme {
+  --color-brand: #2380d6;
+  --color-brand-600: #1f6fbb;
+  --color-brand-700: #1a5a99;
+  --color-sky: #2cbcf1;
+  --color-sky-700: #1897c5;
+  --color-accent: #ff5e14;
+  --color-ink: #1a1a1a;
+  --color-ink-soft: #5a5a5a;
+  --color-paper: #f6f9fc;
+  --color-line: #e3ebf2;
+
+  --font-heading: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink-soft);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+/* ---- CSS-rendered fabric swatches (no images) ---- */
+.swatch {
+  position: relative;
+  overflow: hidden;
+}
+.swatch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+/* Terry: looped pile dots */
+.swatch-terry-ivory { background: #efe7d8; }
+.swatch-terry-stone { background: #d9dde0; }
+.swatch-terry-white { background: #eef2f5; }
+.swatch-terry-beige { background: #e7ddca; }
+.swatch-terry-ivory::after,
+.swatch-terry-stone::after,
+.swatch-terry-white::after,
+.swatch-terry-beige::after {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.16) 1.2px, transparent 1.4px);
+  background-size: 7px 7px;
+}
+/* Waffle: square grid */
+.swatch-waffle-grey { background: #dfe3e6; }
+.swatch-waffle-aqua { background: #d4ecef; }
+.swatch-waffle-grey::after,
+.swatch-waffle-aqua::after {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.18) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+/* Percale: fine horizontal weave */
+.swatch-percale-blue { background: #d7e3ef; }
+.swatch-percale-blue::after {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.12) 0,
+    rgba(0, 0, 0, 0.12) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+/* Dobby: subtle diagonal */
+.swatch-dobby-mint { background: #d6ece1; }
+.swatch-dobby-mint::after {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.12) 0,
+    rgba(0, 0, 0, 0.12) 1.5px,
+    transparent 1.5px,
+    transparent 7px
+  );
+}

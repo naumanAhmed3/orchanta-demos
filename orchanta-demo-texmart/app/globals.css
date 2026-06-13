@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/*
+  Brand tokens for Tex Mart International.
+  Anchored on the navy the live site literally uses for its company name
+  (color="#000080" on texmartt.com/contactus.html) and the green "read more"
+  accent from the homepage. Sand/cream backdrop evokes raw cotton & terry.
+*/
+@theme {
+  --color-navy: #0f2a5c;
+  --color-navy-700: #16356f;
+  --color-navy-900: #0a1d40;
+  --color-ink: #1b2333;
+  --color-slate: #51607a;
+  --color-mist: #e4e9f2;
+  --color-line: #d8dde7;
+  --color-sand: #f6f1e7;
+  --color-cream: #fbf8f1;
+  --color-paper: #ffffff;
+  --color-thread: #2f7d52;
+  --color-thread-700: #256241;
+  --color-gold: #c08a2d;
+
+  --font-display: var(--font-libre-franklin), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--color-navy);
+  color: #fff;
+}
+
+/* Keyboard focus ring for every interactive control */
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+a:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 2px;
+}

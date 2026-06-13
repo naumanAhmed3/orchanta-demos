@@ -27,3 +27,9 @@ One folder per client demo built by the Orchanta studio. Each is a standalone Ne
 | orchanta-demo-customfit | Custom Fit College Counseling (link previews) | https://orchanta-demo-customfit.vercel.app |
 | orchanta-demo-unovita | Uno Vita (MVA + Tripletex) | https://orchanta-demo-unovita.vercel.app |
 | orchanta-unsubscribe | Unsubscribe service (CAN-SPAM one-click) | https://orchanta-unsubscribe.vercel.app |
+| orchanta-demo-armtextile | A.R.M Textile (towel/linen export catalog + quote) | https://orchanta-demo-armtextile.vercel.app |
+| orchanta-demo-texmart | Tex Mart International (export catalog + inquiry) | https://orchanta-demo-texmart.vercel.app |
+| orchanta-demo-fahaddental | Fahad Dental Square (WhatsApp appointment booking) | https://orchanta-demo-fahaddental.vercel.app |
+| orchanta-demo-idc | Islamabad Driving Center (course + slot booking) | https://orchanta-demo-idc.vercel.app |
+| orchanta-demo-bsstudio | BS Studio by Ossama Adnan (portfolio + WhatsApp enquiry) | https://orchanta-demo-bsstudio.vercel.app |
+| orchanta-demo-setmyhair | Set My Hair Salon (service list + WhatsApp booking) | https://orchanta-demo-setmyhair.vercel.app |
