@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   YouthWell — calming, accessible nonprofit redesign concept (Orchanta demo)
+   Palette: soft teal/green + sky, on warm neutral. High contrast, very readable.
+--------------------------------------------------------------------------- */
+
+@theme {
+  --color-cream: #fbf8f1;
+  --color-sand: #f1e8d8;
+  --color-shell: #fffdf8;
+  --color-ink: #1b3a37;
+  --color-ink-soft: #3d5d59;
+  --color-teal: #2c8c7e;
+  --color-teal-deep: #1d6a5f;
+  --color-teal-bright: #38a895;
+  --color-sky: #5fa8cc;
+  --color-sky-soft: #cfe6f0;
+  --color-mint: #d6ecdf;
+  --color-mint-deep: #8fc9ad;
+  --color-coral: #e98a5b;
+  --color-coral-deep: #d4703f;
+  --color-sun: #f4c95d;
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --shadow-soft: 0 18px 48px -24px rgba(27, 58, 55, 0.45);
+  --shadow-card: 0 12px 34px -18px rgba(27, 58, 55, 0.4);
+  --ring-focus: 0 0 0 3px #fbf8f1, 0 0 0 5.5px var(--color-teal);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
+}
+
+/* Accessible focus ring for every interactive control */
+a:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow: var(--ring-focus);
+  border-radius: 0.65rem;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--color-ink);
+  color: var(--color-shell);
+  padding: 0.65rem 1.1rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* --- Motion: gentle fades and rises only, nothing jarring -------------- */
+
+@keyframes ywFadeRise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ywFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-14px) rotate(1.2deg); }
+}
+
+@keyframes ywFloatSlow {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(10px); }
+}
+
+@keyframes ywDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes ywBreathe {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50%      { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes ywSheen {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+
+/* Hero entrance: staggered children */
+.hero-enter > * {
+  opacity: 0;
+  animation: ywFadeRise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-enter > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-enter > *:nth-child(2) { animation-delay: 0.18s; }
+.hero-enter > *:nth-child(3) { animation-delay: 0.31s; }
+.hero-enter > *:nth-child(4) { animation-delay: 0.44s; }
+.hero-enter > *:nth-child(5) { animation-delay: 0.57s; }
+.hero-enter > *:nth-child(6) { animation-delay: 0.70s; }
+
+.float { animation: ywFloat 9s ease-in-out infinite; }
+.float-slow { animation: ywFloatSlow 11s ease-in-out infinite; }
+.breathe { animation: ywBreathe 6s ease-in-out infinite; }
+
+.draw-path {
+  stroke-dasharray: var(--len, 1200);
+  stroke-dashoffset: var(--len, 1200);
+  animation: ywDraw 2.4s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+/* Scroll-reveal (driven by IntersectionObserver in Reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Micro-interaction helpers */
+.lift {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-soft);
+}
+
+.text-balance { text-wrap: balance; }
+.text-pretty { text-wrap: pretty; }
+
+.sheen-text {
+  background: linear-gradient(
+    100deg,
+    var(--color-teal-deep) 0%,
+    var(--color-teal-bright) 35%,
+    var(--color-sky) 65%,
+    var(--color-teal-deep) 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: ywSheen 9s ease-in-out infinite alternate;
+}
+
+/* Reduced-motion: respect user preference, disable all non-essential motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  .hero-enter > *,
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .draw-path { stroke-dashoffset: 0 !important; }
+  .sheen-text { animation: none !important; }
+}
