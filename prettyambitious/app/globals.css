@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette */
+  --color-paper: #faf6f1;
+  --color-paper-2: #f3ece3;
+  --color-ink: #16130f;
+  --color-ink-soft: #2a251e;
+  --color-magenta: #e0457b;
+  --color-terracotta: #c7613e;
+  --color-blush: #f0d7dc;
+  --color-muted: #6b6256;
+  --color-hairline: #ddd2c4;
+
+  /* Type families (next/font injects --font-fraunces / --font-inter on <body>) */
+  --font-display: var(--font-fraunces), "Times New Roman", Georgia, serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* Editorial type scale */
+  --text-masthead: clamp(2.6rem, 9vw, 7rem);
+  --text-h1: clamp(2rem, 5.2vw, 3.6rem);
+  --text-h2: clamp(1.5rem, 3.4vw, 2.4rem);
+}
+
+/* ------------------------------------------------------------------ *
+ * The demo root exposes live design-system tokens as CSS variables.
+ * The token drawer rewrites --accent / --demo-radius / --display-font
+ * and EVERY surface below reads them, so one change re-skins all.
+ * ------------------------------------------------------------------ */
+.demo-root {
+  --accent: #e0457b;
+  --accent-soft: color-mix(in srgb, var(--accent) 16%, #faf6f1);
+  --demo-radius: 6px;
+  --display-font: var(--font-fraunces), "Times New Roman", Georgia, serif;
+}
+
+html,
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--color-blush);
+  color: var(--color-ink);
+}
+
+.font-display {
+  font-family: var(--display-font);
+}
+
+.accent-soft {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+/* Magazine nameplate hairlines */
+.hairline {
+  border-color: var(--color-hairline);
+}
+
+/* Fine grain paper texture, very subtle */
+.paper-grain {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(199, 97, 62, 0.04), transparent 38%),
+    radial-gradient(circle at 80% 12%, rgba(224, 69, 123, 0.045), transparent 40%);
+}
+
+/* Custom range slider styled to brand */
+input[type="range"].token-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--color-hairline);
+  outline: none;
+  width: 100%;
+}
+input[type="range"].token-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 6px rgba(22, 19, 15, 0.25);
+  cursor: pointer;
+}
+input[type="range"].token-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

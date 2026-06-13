@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  /* Canvas + surfaces (near-black, engineered studio tool) */
+  --color-canvas: #000000;
+  --color-surface: #0c0c0d;
+  --color-surface-2: #121214;
+  --color-panel: #17171a;
+  --color-line: #242427;
+  --color-line-strong: #34343a;
+
+  /* Brand */
+  --color-orange: #cb4003;
+  --color-orange-bright: #f2560c;
+  --color-orange-soft: #3a1707;
+  --color-brown: #511901;
+
+  /* Text */
+  --color-ink: #ffffff;
+  --color-muted: #9ca3af;
+  --color-faint: #6b7280;
+
+  /* Data-tag chips */
+  --color-cyan: #05a1b5;
+  --color-magenta: #cb0b6e;
+  --color-teal: #009c88;
+
+  /* Type */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-spline), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--color-orange);
+    color: #fff;
+  }
+  /* Thin custom scrollbars inside scrolling panels */
+  .scroll-soft::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scroll-soft::-webkit-scrollbar-thumb {
+    background: var(--color-line-strong);
+    border-radius: 9999px;
+  }
+  .scroll-soft::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Ambient backdrop: subtle burnt-orange glow + engineered grid */
+.bg-engine {
+  background-color: #000;
+  background-image:
+    radial-gradient(60rem 40rem at 80% -10%, rgba(203, 64, 3, 0.16), transparent 60%),
+    radial-gradient(50rem 40rem at -10% 110%, rgba(81, 25, 1, 0.35), transparent 55%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+}
+
+/* Generation sweep used on the Higgsfield render */
+@keyframes sweep {
+  0% { transform: translateX(-110%); }
+  100% { transform: translateX(210%); }
+}
+.animate-sweep {
+  animation: sweep 1.15s ease-in-out infinite;
+}
+
+/* Soft pulse for active pipeline nodes */
+@keyframes node-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(203, 64, 3, 0.55); }
+  50% { box-shadow: 0 0 0 6px rgba(203, 64, 3, 0); }
+}
+.animate-node-pulse {
+  animation: node-pulse 1.6s ease-out infinite;
+}
+
+/* Blinking caret for the streaming reasoning */
+@keyframes caret {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.caret::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: -2px;
+  background: var(--color-orange);
+  animation: caret 1s steps(1) infinite;
+}
+
+/* Connector flow dash for the pipeline rail */
+@keyframes flow {
+  to { background-position: 28px 0; }
+}
+.flow-line {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-orange) 0 45%,
+    transparent 45% 100%
+  );
+  background-size: 14px 2px;
+  animation: flow 0.7s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sweep,
+  .animate-node-pulse,
+  .caret::after,
+  .flow-line {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

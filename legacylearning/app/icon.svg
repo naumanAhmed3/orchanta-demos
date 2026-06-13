@@ -1,0 +1,16 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="15" fill="#163E5C"/>
+  <!-- sunrise rays -->
+  <g stroke="#F6B43C" stroke-width="2.6" stroke-linecap="round">
+    <path d="M32 14.5V10"/>
+    <path d="M21 17.5l-2.6-3.4"/>
+    <path d="M43 17.5l2.6-3.4"/>
+  </g>
+  <!-- sunrise arc / aperture smile -->
+  <path d="M21 24a11 11 0 0 1 22 0" stroke="#F6B43C" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- open book pages lifting -->
+  <path d="M12 33c7-3 14-3 20 1 6-4 13-4 20-1v17c-7-3-14-3-20 1-6-4-13-4-20-1V33Z" fill="#FBF7EF"/>
+  <path d="M32 34v17" stroke="#2BA6A4" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M18 38c4-1.4 8-1.4 11 .3M18 43c4-1.4 8-1.4 11 .3" stroke="#2BA6A4" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M46 38c-4-1.4-8-1.4-11 .3M46 43c-4-1.4-8-1.4-11 .3" stroke="#FF8A5B" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

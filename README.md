@@ -37,3 +37,7 @@ One folder per client demo built by the Orchanta studio. Each is a standalone Ne
 | orchanta-demo-mattadler | Matt Adler — Jewish travel experiences concept ("Adler Journeys") | https://orchanta-demo-mattadler.vercel.app |
 | orchanta-demo-sojourn | Sojourn Cellars — custom Shopify analytics dashboard | https://orchanta-demo-sojourn.vercel.app |
 | orchanta-demo-youthwell | YouthWell — youth mental-health nonprofit redesign | https://orchanta-demo-youthwell.vercel.app |
+
+- **moveforth** — Jayr Marasigan / Moveforth Studio: AI creative-automation pipeline (Claude + Higgsfield) → on-brand ad/UGC batch. https://orchanta-demo-moveforth.vercel.app
+- **legacylearning** — Charith Weerasuriya / Legacy Learning Group: tablet OpenAI-Vision learning loop (write→recognize→coach→reward). https://orchanta-demo-legacylearning.vercel.app
+- **prettyambitious** — Aditi Mishra / Pretty Ambitious: editorial homepage + live design-system token drawer unifying 4 surfaces. https://orchanta-demo-prettyambitious.vercel.app

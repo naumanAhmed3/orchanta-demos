@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+/* ---- Brand theme (warm, trustworthy, tactile — continuity with FirstLight) ---- */
+@theme {
+  --color-navy: #163e5c;
+  --color-navy-700: #1d4d70;
+  --color-teal: #2ba6a4;
+  --color-teal-600: #229490;
+  --color-gold: #f6b43c;
+  --color-coral: #ff8a5b;
+  --color-cream: #fbf7ef;
+  --color-cream-200: #f3ecdd;
+  --color-ink: #20323d;
+
+  --radius-tablet: 2.25rem;
+}
+
+@theme inline {
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-nunito);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(1100px 600px at 12% -10%, #fdf6e6 0%, transparent 55%),
+    radial-gradient(1000px 700px at 110% 10%, #e9f5f4 0%, transparent 50%),
+    linear-gradient(180deg, #f8f1e2 0%, #eef3f1 100%);
+  color: var(--color-ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+}
+
+/* Lined / grid paper textures for the sample "photos" */
+.paper-lined {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 25px,
+    rgba(43, 166, 164, 0.28) 26px,
+    transparent 27px
+  );
+  background-color: #fffdf7;
+}
+.paper-grid {
+  background-image:
+    repeating-linear-gradient(to right, rgba(22, 62, 92, 0.12) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(to bottom, rgba(22, 62, 92, 0.12) 0 1px, transparent 1px 24px);
+  background-color: #fffdf7;
+}
+
+/* Soft depth used across cards */
+.shadow-soft {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 18px 40px -24px rgba(22, 62, 92, 0.45);
+}
+
+/* ---------------------------------- Motion ---------------------------------- */
+@keyframes scan-sweep {
+  0% {
+    transform: translateY(-110%);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(210%);
+    opacity: 0;
+  }
+}
+.animate-scan {
+  animation: scan-sweep 1.45s cubic-bezier(0.45, 0, 0.2, 1) forwards;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-reveal {
+  animation: reveal-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes star-pop {
+  0% {
+    transform: scale(0) rotate(-40deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.18) rotate(6deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+.animate-star {
+  animation: star-pop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes sparkle-fly {
+  0% {
+    transform: translate(0, 0) scale(0.2);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(1);
+    opacity: 0;
+  }
+}
+.animate-sparkle {
+  animation: sparkle-fly 0.95s ease-out forwards;
+}
+
+@keyframes draw-stroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.animate-draw {
+  stroke-dasharray: 620;
+  stroke-dashoffset: 620;
+  animation: draw-stroke 1.6s ease-in-out forwards;
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.animate-float {
+  animation: float-soft 5s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(43, 166, 164, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgba(43, 166, 164, 0);
+  }
+}
+.animate-pulse-ring {
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+.ring-progress {
+  transition: stroke-dashoffset 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Honour reduced-motion: instant states, static badge, no confetti */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .animate-draw {
+    stroke-dashoffset: 0;
+  }
+  .reduce-hide {
+    display: none !important;
+  }
+}
