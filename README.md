@@ -33,3 +33,4 @@ One folder per client demo built by the Orchanta studio. Each is a standalone Ne
 | orchanta-demo-idc | Islamabad Driving Center (course + slot booking) | https://orchanta-demo-idc.vercel.app |
 | orchanta-demo-bsstudio | BS Studio by Ossama Adnan (portfolio + WhatsApp enquiry) | https://orchanta-demo-bsstudio.vercel.app |
 | orchanta-demo-setmyhair | Set My Hair Salon (service list + WhatsApp booking) | https://orchanta-demo-setmyhair.vercel.app |
+| orchanta-demo-littlebig | Little Big Flavour Kits (AI Spice Guide + order automation + ops dashboard) | https://orchanta-demo-littlebig.vercel.app |

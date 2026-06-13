@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#108474"/>
+  <!-- curry pot -->
+  <path d="M16 30h32v6a16 16 0 0 1-16 16 16 16 0 0 1-16-16z" fill="#fcc04c"/>
+  <rect x="13" y="27" width="38" height="5" rx="2.5" fill="#e0a21e"/>
+  <!-- rising spice steam -->
+  <path d="M26 24c-3-3 1-6-2-9" fill="none" stroke="#fcf1cd" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M32 22c-3-3 1-6-2-9" fill="none" stroke="#fcf1cd" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M38 24c-3-3 1-6-2-9" fill="none" stroke="#fcf1cd" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- chilli dot -->
+  <circle cx="32" cy="41" r="3.4" fill="#c16452"/>
+</svg>

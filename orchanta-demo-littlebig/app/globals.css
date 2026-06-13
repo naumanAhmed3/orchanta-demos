@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* Brand tokens mirrored from littlebigflavourkits.co.uk
+   teal #108474 · turmeric gold #FCC04C · cream #FCF1CD · terracotta #C16452 · ink #231F20 */
+@theme {
+  --color-cream: #fcf1cd;
+  --color-cream-soft: #fdf7e6;
+  --color-paper: #fffdf6;
+  --color-teal: #108474;
+  --color-teal-deep: #0b5f54;
+  --color-teal-ink: #08433b;
+  --color-gold: #fcc04c;
+  --color-gold-deep: #e0a21e;
+  --color-terracotta: #c16452;
+  --color-chilli: #c20000;
+  --color-ink: #231f20;
+  --color-ink-soft: #5b534f;
+
+  --font-display: var(--font-manuale), Georgia, serif;
+  --font-body: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Warm spice gradient used behind the hero and footer. */
+.spice-wash {
+  background:
+    radial-gradient(60% 90% at 88% 8%, rgba(252, 192, 76, 0.35), transparent 60%),
+    radial-gradient(55% 80% at 6% 92%, rgba(193, 100, 82, 0.28), transparent 60%),
+    linear-gradient(180deg, var(--color-cream-soft), var(--color-cream));
+}
+
+.card {
+  background-color: var(--color-paper);
+  border: 1px solid rgba(35, 31, 32, 0.08);
+  border-radius: 1.25rem;
+  box-shadow: 0 18px 40px -28px rgba(35, 31, 32, 0.45);
+}
+
+.pill {
+  border-radius: 999px;
+}
+
+/* Smooth reveal for automation log lines and AI answers. */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: riseIn 0.32s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .rise-in {
+    animation: none;
+  }
+}
+
+/* Focus ring tuned to the brand teal for keyboard users. */
+button:focus-visible {
+  outline: 3px solid var(--color-teal);
+  outline-offset: 2px;
+}
