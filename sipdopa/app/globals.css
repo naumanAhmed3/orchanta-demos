@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-matcha: #5A6B3B;
+  --color-sage: #8FA866;
+  --color-pale: #E8EBD9;
+  --color-cream: #FAF7F0;
+  --color-ink: #1F2419;
+  --color-berry: #E9A6B4;
+  --color-peach: #F2D9C2;
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+}
+
+:root {
+  /* live flavour accent, driven by JS; defaults to ceremonial green */
+  --accent: #5A6B3B;
+  --accent-soft: #E8EBD9;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+/* soft grain / glow background */
+.bg-ritual {
+  background:
+    radial-gradient(60% 50% at 50% 0%, color-mix(in srgb, var(--accent) 14%, transparent) 0%, transparent 70%),
+    radial-gradient(40% 40% at 85% 30%, color-mix(in srgb, var(--color-peach) 40%, transparent) 0%, transparent 60%),
+    var(--color-cream);
+}
+
+/* steam wisp */
+@keyframes steam {
+  0%   { opacity: 0; transform: translateY(6px) scaleY(0.85); }
+  35%  { opacity: 0.55; }
+  100% { opacity: 0; transform: translateY(-26px) scaleY(1.15); }
+}
+.steam {
+  animation: steam 3.6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-10px) rotate(-1.2deg); }
+}
+.floaty { animation: floaty 6s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(110deg, transparent 35%, color-mix(in srgb, #fff 70%, transparent) 50%, transparent 65%);
+  background-size: 200% 100%;
+  animation: shimmer 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, .steam, .floaty, .shimmer {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

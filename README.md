@@ -41,3 +41,6 @@ One folder per client demo built by the Orchanta studio. Each is a standalone Ne
 - **moveforth** — Jayr Marasigan / Moveforth Studio: AI creative-automation pipeline (Claude + Higgsfield) → on-brand ad/UGC batch. https://orchanta-demo-moveforth.vercel.app
 - **legacylearning** — Charith Weerasuriya / Legacy Learning Group: tablet OpenAI-Vision learning loop (write→recognize→coach→reward). https://orchanta-demo-legacylearning.vercel.app
 - **prettyambitious** — Aditi Mishra / Pretty Ambitious: editorial homepage + live design-system token drawer unifying 4 surfaces. https://orchanta-demo-prettyambitious.vercel.app
+
+- **sipdopa** — Abigail Clarke / Sip Dopa: subscription-matcha Shopify storefront (six-flavour picker + subscribe-and-save). https://orchanta-demo-sipdopa.vercel.app
+- **cococlean** — John Roulac / Coco Clean: bespoke (non-template) Shopify theme (Cleans Like A Dream hero + 100M-bottles counter). https://orchanta-demo-cococlean.vercel.app
