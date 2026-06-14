@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#FED324"/>
+  <!-- "mii" mark: black bars + two dots over the i's -->
+  <g fill="#000000">
+    <!-- m -->
+    <rect x="10" y="30" width="6" height="22" rx="3"/>
+    <rect x="20" y="30" width="6" height="22" rx="3"/>
+    <rect x="10" y="30" width="16" height="6" rx="3"/>
+    <!-- i 1 -->
+    <rect x="32" y="30" width="6" height="22" rx="3"/>
+    <circle cx="35" cy="22" r="4"/>
+    <!-- i 2 -->
+    <rect x="44" y="30" width="6" height="22" rx="3"/>
+    <circle cx="47" cy="22" r="4"/>
+  </g>
+</svg>

@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #f7f6f3;
+  --color-ink: #37352f;
+  --color-ink-soft: #6b6963;
+  --color-ink-faint: #9b988f;
+  --color-card: #ffffff;
+  --color-line: #ebeae5;
+  --color-line-strong: #e0ded7;
+
+  /* functional accent tags */
+  --color-orange: #d9730d;
+  --color-green: #448361;
+  --color-blue: #327da9;
+  --color-pink: #c24c8b;
+  --color-purple: #8f64af;
+
+  --color-orange-soft: #fbeee0;
+  --color-green-soft: #e7f1ea;
+  --color-blue-soft: #e3eef4;
+  --color-pink-soft: #f7e8f0;
+  --color-purple-soft: #efe8f5;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, "SF Mono", monospace;
+
+  --radius-card: 12px;
+}
+
+html {
+  background: var(--color-canvas);
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* tabular, precise numerics for the data-room feel */
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* slim, on-brand scrollbars for inner scroll containers */
+.thin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-strong) transparent;
+}
+.thin-scroll::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-line-strong);
+  border-radius: 9999px;
+}
+.thin-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

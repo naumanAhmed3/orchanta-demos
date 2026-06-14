@@ -44,3 +44,6 @@ One folder per client demo built by the Orchanta studio. Each is a standalone Ne
 
 - **sipdopa** — Abigail Clarke / Sip Dopa: subscription-matcha Shopify storefront (six-flavour picker + subscribe-and-save). https://orchanta-demo-sipdopa.vercel.app
 - **cococlean** — John Roulac / Coco Clean: bespoke (non-template) Shopify theme (Cleans Like A Dream hero + 100M-bottles counter). https://orchanta-demo-cococlean.vercel.app
+
+- **miinoor** — Sherry Howell / Miinoor: phone-framed live-shopping prototype (Go Live stream + tap-to-buy + AI assistant). https://orchanta-demo-miinoor.vercel.app
+- **ehvm** — Evelin Herrera / EHVM Apps Capital: 'Deal Desk' portfolio + pipeline dashboard for an apps-M&A firm. https://orchanta-demo-ehvm.vercel.app
